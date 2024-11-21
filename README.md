@@ -2,6 +2,15 @@
 
 https://github.com/r23vme/gotreload/blob/master/gotreload_test.go
 
+## Echo endpoint
+```
+gr := gotreload.New()
+router.GET(gr.URL, func(c echo.Context) error {
+  gr.ServeHTTP(c.Response().Writer, c.Request())
+  return nil
+})
+```
+
 ## Echo middlewares:
 
 ### Inject `<script>` after `</html>`
